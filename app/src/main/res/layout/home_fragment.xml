@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/threee_line" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Read Ease"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#9C27B0"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/bellIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_bellicon" />
+    </LinearLayout>
+
+    <!-- Recommended Title -->
+    <TextView
+        android:id="@+id/recommendedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended for you"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/recommendedSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Handpicked based on your reading preferences."
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/recommendedTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Recommended RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommendedRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:overScrollMode="never"
+
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/recommendedSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- New Releases Title -->
+    <TextView
+        android:id="@+id/newReleasesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Releases"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/recommendedRecycler"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/newReleasesSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Newly released books spanning various genres."
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/newReleasesTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- New Releases RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newReleasesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newReleasesSubtitle" />
+
+    <!-- Bottom Navigation -->
+</androidx.constraintlayout.widget.ConstraintLayout>

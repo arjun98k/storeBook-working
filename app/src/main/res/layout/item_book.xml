@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginEnd="16dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <ImageView
+            android:id="@+id/bookImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mv1" /> <!-- Replace mv1 with your actual drawable -->
+
+        <TextView
+            android:id="@+id/bookTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFCC00"
+            android:text="Fiction"
+            android:textColor="#000000"
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Midnight Library"
+        android:textColor="#1A1A4B"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/bookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matt Haig"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginTop="2dp"/>
+</LinearLayout>
