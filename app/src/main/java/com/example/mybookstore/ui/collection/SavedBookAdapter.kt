@@ -8,7 +8,8 @@ import com.example.mybookstore.data.local.BookEntity
 import com.example.mybookstore.databinding.ItemBookBinding
 
 class SavedBookAdapter(
-    private val onItemClick: (BookEntity) -> Unit
+    private val onItemClick: (BookEntity) -> Unit,
+    private val onItemLongClick: (BookEntity) -> Unit  // ✅ ADDED: long click callback
 ) : RecyclerView.Adapter<SavedBookAdapter.BookViewHolder>() {
 
     private val books = mutableListOf<BookEntity>()
@@ -25,8 +26,15 @@ class SavedBookAdapter(
             binding.bookAuthor.text = book.author
             Glide.with(binding.root).load(book.imageUrl).into(binding.bookImage)
 
+            // ✅ ON CLICK: navigate to detail
             binding.root.setOnClickListener {
-                onItemClick(book)
+                onItemClick.invoke(book)
+            }
+
+            // ✅ ON LONG CLICK: confirm delete
+            binding.root.setOnLongClickListener {
+                onItemLongClick.invoke(book)
+                true
             }
         }
     }

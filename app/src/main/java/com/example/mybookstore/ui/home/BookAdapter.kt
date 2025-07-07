@@ -12,7 +12,8 @@ import com.example.mybookstore.data.model.Book
 import com.example.mybookstore.databinding.ItemBookBinding
 
 class BookAdapter(
-    private val onSavedBookClick: ((BookEntity) -> Unit)? = null
+    private val onSavedBookClick: ((BookEntity) -> Unit)? = null,
+            private val onSavedBookLongClick: ((BookEntity) -> Unit)? = null
 ) : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
     private var apiBooks: List<Book> = emptyList()
