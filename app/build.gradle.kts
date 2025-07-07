@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("io.objectbox")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -56,6 +58,10 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
 // (Later for ObjectBox, no need now)
+    val objectboxVersion = "4.3.0"
+    implementation("io.objectbox:objectbox-android:$objectboxVersion")
+    implementation("io.objectbox:objectbox-kotlin:$objectboxVersion")
+    kapt("io.objectbox:objectbox-processor:$objectboxVersion")
 
     implementation("com.google.android.material:material:1.12.0")
     implementation(libs.androidx.core.ktx)

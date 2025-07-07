@@ -31,6 +31,23 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        binding.bottomNav.setupWithNavController(navController)
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeFragment -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.collectionFragment -> {
+                    navController.navigate(R.id.collectionFragment)
+                    true
+                }
+                R.id.searchFragment -> {
+                    navController.navigate(R.id.searchFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 }

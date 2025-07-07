@@ -7,12 +7,12 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.mybookstore.ui.home.HomeFragment"
-        android:label="Home" >
+        android:label="Home">
         <action
-            android:id="@+id/action_home_to_search"
+            android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
         <action
-            android:id="@+id/action_home_to_collection"
+            android:id="@+id/action_homeFragment_to_collectionFragment"
             app:destination="@id/collectionFragment" />
         <action
             android:id="@+id/action_homeFragment_to_bookDetailFragment"
@@ -22,24 +22,41 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.mybookstore.ui.search.SearchFragment"
-        android:label="Search" >
+        android:label="Search">
         <action
-            android:id="@+id/action_search_to_home"
+            android:id="@+id/action_searchFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_collectionFragment"
+            app:destination="@id/collectionFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/collectionFragment"
         android:name="com.example.mybookstore.ui.collection.CollectionFragment"
-        android:label="Collection" >
+        android:label="Collection">
         <action
-            android:id="@+id/action_collection_to_home"
+            android:id="@+id/action_collectionFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_collectionFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_collectionFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/bookDetailFragment"
         android:name="com.example.mybookstore.ui.bookdetail.BookDetailFragment"
         android:label="Book Detail"
-        tools:layout="@layout/fragment_book_detail" />
+        tools:layout="@layout/fragment_book_detail">
+        <action
+            android:id="@+id/action_bookDetailFragment_to_collectionFragment"
+            app:destination="@id/collectionFragment" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
 </navigation>
